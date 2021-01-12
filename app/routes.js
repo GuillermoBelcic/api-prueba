@@ -3,8 +3,9 @@ const router = express.Router();
 
 const mainController = require('./controllers/main.controller');
 
-router.get('/', mainController.testMain);
-
-router.get('/test/:id', mainController.testParams);
+router
+    .get('/', mainController.testMain)
+    .get('/test/', mainController.testParams)
+    .get('/test/:id', mainController.testParams);
 
 module.exports = router;
