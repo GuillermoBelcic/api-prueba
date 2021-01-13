@@ -1,3 +1,5 @@
+const User = require('./../models/user.model');
+
 exports.testMain = (req, res) => {
     const response = {
         message: 'Hello World'
@@ -15,3 +17,8 @@ exports.testParams = (req, res) => {
     }
     res.status(200).json(response);
 };
+
+exports.getUsers = async (req, res) => {
+    const allUsers = await User.find();
+    res.status(200).json(allUsers);
+}

@@ -6,6 +6,8 @@ const mainController = require('./controllers/main.controller');
 router
     .get('/', mainController.testMain)
     .get('/test/', mainController.testParams)
-    .get('/test/:id', mainController.testParams);
+    .get('/test/:id', mainController.testParams)
+    .get('/users', mainController.getUsers);
+
 
 module.exports = router;
