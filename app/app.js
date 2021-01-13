@@ -1,12 +1,13 @@
 require('dotenv').config();
 const db = require('./config/db');
+const bodyParser = require('body-parser');
 
 const express = require("express");
 const app = express();
 
-this.app.use(bodyParser.json());
-this.app.use(bodyParser.urlencoded({ extended: false }));
-this.app.use((req,res,next) => {
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use((req,res,next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header(
         'Access-Control-Allow-Headers',
