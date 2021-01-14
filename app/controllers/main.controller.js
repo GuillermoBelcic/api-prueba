@@ -23,3 +23,14 @@ exports.getUsers = async (req, res) => {
     const allUsers = await User.find();
     res.status(200).json(allUsers);
 }
+
+exports.setExpense = (req, res) => {
+	const response = {
+		message: 'new expense created',
+		expense: {
+			name: 'hjhjhj',
+			quantity: 25
+		}
+	};
+	res.status(201).json(response).send();
+}

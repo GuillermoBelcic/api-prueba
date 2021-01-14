@@ -3,12 +3,11 @@ const router = express.Router();
 
 const mainController = require('./controllers/main.controller');
 
-router
-    .get('/', mainController.testMain)
-    .get('/test/', mainController.testParams)
-    .get('/test/:id', mainController.testParams)
-	.get('/users', mainController.getUsers)
-	.post('/exponses', mainController.testParams);
+router.route('/').get(mainController.testMain);
+router.route('/test').get(mainController.testParams);
+router.route('/test/:id').get(mainController.testParams);
+router.route('/users').get(mainController.getUsers);
+router.route('/expenses').post(mainController.setExpense);
 
 
 module.exports = router;

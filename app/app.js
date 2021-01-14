@@ -24,7 +24,7 @@ const port = process.env.PORT || 9999;
 const routes = require('./routes');
 
 // Get routes
-app.get('/api', routes);
+app.use('/api', routes);
 
 // Start service
 app.listen(port, function() {
