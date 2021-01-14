@@ -13,8 +13,9 @@ exports.testParams = (req, res) => {
 
     const response = {
         message: 'hello params',
-        params: req.params.id || 'no params send'
-    }
+		params: req.params.id || 'no params send',
+		query: req.query || 'no query'
+    };
     res.status(200).json(response);
 };
 
