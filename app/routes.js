@@ -13,5 +13,9 @@ router.route('/todo')
 .get(todoController.getTodos)
 .post(todoController.newTodo);
 
+router.route('/todo/:id')
+.put(todoController.updateTodo)
+.delete(todoController.deleteTodo);
+
 
 module.exports = router;
